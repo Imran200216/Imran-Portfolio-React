@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
@@ -7,7 +6,7 @@ export const TestimonialsSection = () => {
   const stats = [
     { number: "5+", label: "Happy clients" },
     { number: "8+", label: "Projects" },
-    { number: "4.8", label: "Average Rating" }
+    { number: "4.8", label: "Average Rating" },
   ];
 
   const testimonials = [
@@ -15,15 +14,26 @@ export const TestimonialsSection = () => {
       rating: 5,
       text: "Working with him was a breeze. He took our scattered ideas and turned them into a cohesive and stunning AI solution. Highly recommended!",
       author: "Tech Lead",
-      company: "Startup Client"
+      company: "Startup Client",
     },
     {
       rating: 4,
       text: "The professionalism and technical expertise Mohammed brought to our project was exceptional. Great communication throughout.",
-      author: "Project Manager", 
-      company: "Enterprise Client"
-    }
+      author: "Project Manager",
+      company: "Enterprise Client",
+    },
   ];
+
+  // 🔧 Add scroll functions
+  const scrollToProjects = () => {
+    const el = document.getElementById("projects");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section className="py-32">
@@ -33,10 +43,10 @@ export const TestimonialsSection = () => {
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                <div className="w-2 h-2 bg-pink-500 foreground rounded-full"></div>
+                <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
                 <span>Happy Clients</span>
               </div>
-              <h2 className="text-5xl font-bold mb-6">Clients Prefer me !!!</h2>
+              <h2 className="text-5xl font-bold mb-6">Clients Prefer Me !!!</h2>
               <p className="text-xl text-muted-foreground">Trusted by 5+ happy clients</p>
             </div>
 
@@ -51,11 +61,20 @@ export const TestimonialsSection = () => {
               ))}
             </div>
 
-            <div className="flex gap-4 pt-4">
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-border text-foreground hover:bg-muted">
+            <div className="flex flex-col sm:flex-row gap-4 pt-8">
+              <Button
+                size="lg"
+                onClick={scrollToProjects}
+                className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8"
+              >
                 See All Projects
               </Button>
-              <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={scrollToContact}
+                className="rounded-full px-8 border-foreground text-foreground hover:bg-foreground hover:text-background"
+              >
                 Contact Now
               </Button>
             </div>
@@ -68,14 +87,18 @@ export const TestimonialsSection = () => {
                 <CardContent className="p-0 space-y-4">
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className={`w-4 h-4 ${i < testimonial.rating ? 'text-[#FFD700]' : 'text-border'}`}
-                        fill={i < testimonial.rating ? '#FFD700' : 'none'}
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < testimonial.rating ? "text-[#FFD700]" : "text-border"
+                        }`}
+                        fill={i < testimonial.rating ? "#FFD700" : "none"}
                       />
                     ))}
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">"{testimonial.text}"</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
                   <div>
                     <p className="font-semibold text-foreground">{testimonial.author}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.company}</p>
