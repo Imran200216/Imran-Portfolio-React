@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -76,10 +75,43 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  /* Responsive text sizing */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+
+  p {
+    @apply text-sm sm:text-base;
+  }
+
+  /* Mobile-first responsive utilities */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .card-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
   }
 }
 
@@ -199,12 +231,70 @@
 
 @keyframes spin-float {
   0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
   }
   100% {
-    transform: translateY(0px) rotate(360deg);
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .floating-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .neural-grid {
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsl(var(--muted) / 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, hsl(var(--muted) / 0.05) 0%, transparent 40%);
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+  
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:bg-primary\/10:hover {
+    background-color: hsl(var(--primary) / 0.05);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: 0 0% 20%;
+    --muted-foreground: 0 0% 30%;
+  }
+  
+  .dark {
+    --border: 0 0% 60%;
+    --muted-foreground: 0 0% 70%;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .neural-pulse,
+  .float-animation,
+  .glow-effect,
+  .typing-animation {
+    animation: none;
   }
 }

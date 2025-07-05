@@ -1,14 +1,13 @@
 // components/icons/huggingface.tsx
 
-export const HuggingFaceIcon = ({ className = "" }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    role="img"
-  >
-    <title>Hugging Face</title>
-    <path d="M255.7 0C114.4 0 0 114.6 0 256.2S114.4 512 255.7 512C397.6 512 512 397.4 512 256.2S397.6 0 255.7 0Zm76.5 153.5a46.5 46.5 0 1 1-46.5 46.5 46.5 46.5 0 0 1 46.5-46.5Zm-153 0a46.5 46.5 0 1 1-46.5 46.5 46.5 46.5 0 0 1 46.5-46.5ZM98.9 260.8a11.6 11.6 0 1 1 11.6-11.6 11.6 11.6 0 0 1-11.6 11.6Zm314.4-12.5a11.6 11.6 0 1 1-11.6 11.6 11.6 11.6 0 0 1 11.6-11.6ZM256.2 413.3c-81.3 0-147.6-50.4-147.6-112.5a11.7 11.7 0 0 1 11.7-11.7h271.7a11.7 11.7 0 0 1 11.7 11.7c0 62.1-66.3 112.5-147.5 112.5Zm-90.2-59.2a11.7 11.7 0 0 1 16.3-1.5 118.7 118.7 0 0 0 147.8 0 11.7 11.7 0 1 1 14.8 18.1 142.1 142.1 0 0 1-177.4 0 11.7 11.7 0 0 1-1.5-16.6Z" />
+import * as React from "react";
+
+export const HuggingFaceIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width={32} height={32} viewBox="0 0 32 32" fill="none" {...props}>
+    <circle cx={16} cy={16} r={16} fill="#fff" stroke="#000" strokeWidth={2}/>
+    <ellipse cx={16} cy={20} rx={7} ry={4} fill="none" stroke="#000" strokeWidth={2}/>
+    <ellipse cx={12} cy={14} rx={1.2} ry={2} fill="#000"/>
+    <ellipse cx={20} cy={14} rx={1.2} ry={2} fill="#000"/>
+    <path d="M13 19c1 1 5 1 6 0" stroke="#000" strokeWidth={1.5} strokeLinecap="round"/>
   </svg>
 );

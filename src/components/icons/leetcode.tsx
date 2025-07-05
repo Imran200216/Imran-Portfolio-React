@@ -1,14 +1,11 @@
 // components/icons/leetcode.tsx
 
-export const LeetcodeIcon = ({ className = "" }: { className?: string }) => (
-  <svg
-    className={className}
-    role="img"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-  >
-    <title>LeetCode</title>
-    <path d="M20.138 19.205 12.6 23.85a1.927 1.927 0 0 1-2.063-.058l-5.197-3.75a1.934 1.934 0 0 1-.257-3.002l2.24-2.24a.687.687 0 0 1 .97.973l-2.24 2.24a.56.56 0 0 0 .075.87l5.197 3.75a.56.56 0 0 0 .605.017l7.538-4.645a.56.56 0 0 0 .157-.825l-3.922-4.532a.687.687 0 1 1 1.04-.898l3.922 4.532a1.934 1.934 0 0 1-.215 2.516zM21.738.274a.687.687 0 0 1-.103.966L6.883 13.553a.56.56 0 0 1-.684.032l-2.83-1.886a.56.56 0 0 1-.132-.824l8.23-9.924a.687.687 0 1 1 1.053.885L4.993 11.37l1.415.943L21.024 1.24a.687.687 0 0 1 .966-.103l-.252-.863zM17.725 3.9a.687.687 0 1 0-1.083-.854l-7.526 9.53a.687.687 0 0 0 1.083.854z" />
+import * as React from "react";
+
+export const LeetcodeIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width={32} height={32} viewBox="0 0 32 32" fill="none" {...props}>
+    <rect width={32} height={32} rx={16} fill="#fff"/>
+    <path d="M11 24c-2-2 0-5 2-7l7-7" stroke="#000" strokeWidth={2} strokeLinecap="round"/>
+    <path d="M21 8l-8 8 8 8" stroke="#000" strokeWidth={2} strokeLinecap="round"/>
   </svg>
 );
