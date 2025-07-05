@@ -187,3 +187,24 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--foreground) / 0.8);
 }
+
+.floating-icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  opacity: 0.2;
+  z-index: 0;
+  animation: spin-float 20s linear infinite;
+}
+
+@keyframes spin-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}

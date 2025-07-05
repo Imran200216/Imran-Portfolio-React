@@ -1,31 +1,27 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
 export const ExperienceSection = () => {
   const experiences = [
-    {
-      title: "Founder & CEO",
-      company: "Own firm - Zarnex.ai",
-      period: "2024 - Present",
-      description: "Leading an AI-based service firm delivering intelligent solutions to businesses. Building end-to-end AI systems and managing cross-functional teams.",
-      color: "foreground"
+       {
+      title: "AI & Backend Developer",
+      company: "Freelance - Own Firm | Zarnex.ai",
+      period: "2023 - Present",
+      description: "Developing ML models, LLM applications, and backend systems for various clients. Specializing in healthcare AI and automation solutions.",
+      color: "muted-foreground",
+      logo: "/logos/zar.png"
     },
+   
     {
       title: "Unstop Campus Ambassador",
       company: "Unstop",
       period: "2024 - 2025",
       description: "Promoting tech events, hackathons, and opportunities within the campus community. Engaging with students and fostering innovation.",
-      color: "muted-foreground"
-    },
-    {
-      title: "AI & Backend Developer",
-      company: "Freelance",
-      period: "2023 - Present",
-      description: "Developing ML models, LLM applications, and backend systems for various clients. Specializing in healthcare AI and automation solutions.",
-      color: "muted-foreground"
+      color: "muted-foreground",
+      logo: "/logos/unstop.png"
     }
+    
   ];
 
   return (
@@ -54,9 +50,14 @@ export const ExperienceSection = () => {
                 <Card className="bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 border-border hover:shadow-lg">
                   <CardHeader>
                     <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="text-xl text-foreground">{exp.title}</CardTitle>
-                        <p className={`text-${exp.color} font-semibold`}>{exp.company}</p>
+                      <div className="flex items-start gap-4">
+                        {exp.logo && (
+                          <img src={exp.logo} alt={exp.company} className="w-12 h-12 object-contain rounded-full border border-muted" />
+                        )}
+                        <div>
+                          <CardTitle className="text-xl text-foreground">{exp.title}</CardTitle>
+                          <p className={`text-${exp.color} font-semibold`}>{exp.company}</p>
+                        </div>
                       </div>
                       <Badge variant="outline" className="border-border text-muted-foreground">{exp.period}</Badge>
                     </div>

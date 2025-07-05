@@ -33,10 +33,10 @@ export const TestimonialsSection = () => {
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                <div className="w-2 h-2 bg-foreground rounded-full"></div>
+                <div className="w-2 h-2 bg-pink-500 foreground rounded-full"></div>
                 <span>Happy Clients</span>
               </div>
-              <h2 className="text-5xl font-bold mb-6">Clients Prefer me!!!</h2>
+              <h2 className="text-5xl font-bold mb-6">Clients Prefer me !!!</h2>
               <p className="text-xl text-muted-foreground">Trusted by 5+ happy clients</p>
             </div>
 

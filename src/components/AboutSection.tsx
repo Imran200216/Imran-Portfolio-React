@@ -28,8 +28,8 @@ export const AboutSection = () => {
           {/* Right side - Content */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-5xl font-bold mb-6">Hello, I am Mohammed Aashiq</h2>
-              <p className="text-xl text-muted-foreground mb-6">AI/ML Engineer</p>
+              <h1 className="text-5xl font-bold mb-6"> Mohammed Aashiq,<br></br><h3>Your AI Expert</h3></h1>
+              <p className="text-xl text-muted-foreground mb-6">AI/ML Engineer | Backend Developer </p>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -41,12 +41,20 @@ export const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold">AI & Machine Learning</h3>
                 <h3 className="text-lg font-semibold">Backend Development</h3>
+                <h3 className="text-lg font-semibold">Web Scraping</h3>
+                <h3 className="text-lg font-semibold">Computer Vision</h3>
+
               </div>
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">LLM Integration</h3>
-                <h3 className="text-lg font-semibold">System Architecture</h3>
+                <h3 className="text-lg font-semibold">MLops Orchestration</h3>
+                <h3 className="text-lg font-semibold">Agentic & Autonomous AI </h3>
+
+                
+
+                
+
               </div>
             </div>
 
@@ -64,7 +72,12 @@ export const AboutSection = () => {
               <div>
                 <h4 className="text-sm text-muted-foreground mb-1">Present</h4>
                 <p className="font-semibold">Student</p>
-                <p className="text-sm text-muted-foreground">2022 - 2026</p>
+                <p className="text-sm text-muted-foreground">2023 - 2027</p>
+              </div>
+               <div>
+                <h4 className="text-sm text-muted-foreground mb-1">Leadersip</h4>
+                <p className="font-semibold">Campus Ambassador <br></br>   (Unstop)</p>
+                <p className="text-sm text-muted-foreground">2024 - 2025</p>
               </div>
             </div>
           </div>
