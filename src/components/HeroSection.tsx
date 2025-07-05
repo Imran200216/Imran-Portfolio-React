@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
@@ -39,53 +39,71 @@ export const HeroSection = () => {
     return () => clearInterval(typeInterval);
   }, [currentIndex]);
 
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-green-500/10"></div>
+      {/* Geometric background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-green-500/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-muted-foreground/5 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-muted-foreground/10 rounded-full"></div>
+      </div>
+
+      {/* Floating testimonial cards */}
+      <div className="absolute top-1/4 right-1/4 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform rotate-3 animate-pulse">
+        <p className="text-sm text-muted-foreground mb-2">"Working with him was a great experience!"</p>
+        <p className="text-xs text-muted-foreground">- Client feedback</p>
+      </div>
+
+      <div className="absolute bottom-1/3 right-1/6 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform -rotate-2 animate-pulse" style={{animationDelay: '1s'}}>
+        <p className="text-sm text-muted-foreground mb-2">"He provided extraordinary AI solutions"</p>
+        <p className="text-xs text-muted-foreground">- Zarnex.ai client</p>
+      </div>
       
-      {/* Floating Elements */}
-      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full neural-pulse"></div>
-      <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-green-500 rounded-full neural-pulse" style={{animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-yellow-500 rounded-full neural-pulse" style={{animationDelay: '1s'}}></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left z-10">
         <div className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-primary to-green-500 bg-clip-text text-transparent">
-              Mohammed Aashiq
+          {/* Role indicator */}
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span>Available for work</span>
+          </div>
+
+          <div className="space-y-6">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight">
+              Mohammed <span className="text-muted-foreground">A</span>  
+              <ArrowRight className="inline-block w-12 h-12 ml-4 transform -rotate-45" />
             </h1>
-            <div className="h-16 flex justify-center items-center">
-              <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground">
+            
+            <div className="h-20 flex items-center">
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-medium text-muted-foreground">
                 {displayText}
                 <span className="animate-pulse">|</span>
               </p>
             </div>
           </div>
 
-          <p className="text-lg sm:text-xl max-w-3xl mx-auto text-muted-foreground leading-relaxed">
-            B.Tech AI & Data Science student passionate about building intelligent systems. 
-            Specializing in <span className="text-primary font-semibold">Machine Learning</span>, 
-            <span className="text-green-500 font-semibold"> Large Language Models</span>, and 
-            <span className="text-yellow-500 font-semibold"> Backend Engineering</span>.
+          <p className="text-xl max-w-2xl text-muted-foreground leading-relaxed">
+            I'm a versatile AI engineer specializing in intelligent systems to help 
+            grow your business. Let's build something great!
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="glow-effect" onClick={scrollToAbout}>
-              Explore My Work
+          <div className="flex flex-col sm:flex-row gap-4 pt-8">
+            <Button size="lg" onClick={scrollToProjects} className="bg-muted-foreground text-background hover:bg-muted-foreground/90 rounded-full px-8">
+              See All Projects
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="/resume.pdf" target="_blank">Download Resume</a>
+            <Button variant="outline" size="lg" onClick={scrollToContact} className="rounded-full px-8">
+              Contact Now
             </Button>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-primary" />
       </div>
     </section>
   );

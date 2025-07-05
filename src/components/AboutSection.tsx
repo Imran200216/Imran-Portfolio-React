@@ -3,68 +3,67 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="fade-in-up">
-          <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4 text-primary">AI & Data Science Student</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Currently pursuing B.Tech in Artificial Intelligence and Data Science at 
-                    Sri Manakula Vinayagar Engineering College. In my 3rd year, deeply passionate 
-                    about pushing the boundaries of AI technology.
-                  </p>
-                </CardContent>
-              </Card>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Image placeholder */}
+          <div className="relative">
+            <div className="aspect-[4/5] bg-gradient-to-br from-primary/20 to-green-500/20 rounded-2xl relative overflow-hidden">
+              <div className="absolute inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-3xl font-bold">MA</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mt-8">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-muted-foreground">Available for work</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <Card className="bg-card/50 backdrop-blur-sm border-green-500/20">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4 text-green-500">Founder & Entrepreneur</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Founded <strong>Zarnex.ai</strong> - an AI-based service firm delivering smart, 
-                    AI-backed solutions to businesses. Leading a team to build real-world AI applications 
-                    that make a difference.
-                  </p>
-                </CardContent>
-              </Card>
+          {/* Right side - Content */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-5xl font-bold mb-6">Hello, I am Mohammed</h2>
+              <p className="text-xl text-muted-foreground mb-6">AI/ML Engineer</p>
             </div>
 
-            <div className="space-y-6">
-              <Card className="bg-card/50 backdrop-blur-sm border-yellow-500/20">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4 text-yellow-500">Technical Expertise</h3>
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap gap-2">
-                      {["Machine Learning", "Deep Learning", "NLP", "LLMs", "LangChain", "LangGraph"].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {["Vertex AI", "Firebase", "Flask", "Node.js", "Express.js"].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm passionate about creating AI-focused intelligent systems that 
+              simplify complex problems. With a strong foundation in tech and a keen 
+              eye for innovation, I enjoy bridging the gap between functionality and 
+              intelligence—turning data-driven ideas into clean, meaningful solutions.
+            </p>
 
-              <Card className="bg-card/50 backdrop-blur-sm border-red-500/20">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-semibold mb-4 text-red-500">Community & Leadership</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Unstop Campus Ambassador (2024-25), actively engaging with the tech community 
-                    and mentoring fellow students in AI and backend development.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">AI & Machine Learning</h3>
+                <h3 className="text-lg font-semibold">Backend Development</h3>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">LLM Integration</h3>
+                <h3 className="text-lg font-semibold">System Architecture</h3>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
+              <div>
+                <h4 className="text-sm text-muted-foreground mb-1">Freelance</h4>
+                <p className="font-semibold">AI Engineer (PT)</p>
+                <p className="text-sm text-muted-foreground">2023 - Present</p>
+              </div>
+              <div>
+                <h4 className="text-sm text-muted-foreground mb-1">Own firm</h4>
+                <p className="font-semibold">Zarnex.ai</p>
+                <p className="text-sm text-muted-foreground">2024 - Present</p>
+              </div>
+              <div>
+                <h4 className="text-sm text-muted-foreground mb-1">Present</h4>
+                <p className="font-semibold">Student</p>
+                <p className="text-sm text-muted-foreground">2022 - 2026</p>
+              </div>
             </div>
           </div>
         </div>
