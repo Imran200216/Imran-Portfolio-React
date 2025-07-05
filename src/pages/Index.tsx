@@ -8,7 +8,6 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Navigation } from "@/components/Navigation";
-import { CursorFollower } from "@/components/CursorFollower";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(true);
@@ -37,7 +36,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <CursorFollower />
       <div className="gradient-bg neural-grid">
         <Navigation />
         <HeroSection />

@@ -33,7 +33,7 @@ export const TestimonialsSection = () => {
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <div className="w-2 h-2 bg-foreground rounded-full"></div>
                 <span>Happy Clients</span>
               </div>
               <h2 className="text-5xl font-bold mb-6">Clients Prefer me!!!</h2>
@@ -42,9 +42,9 @@ export const TestimonialsSection = () => {
 
             <div className="grid grid-cols-3 gap-8">
               {stats.map((stat, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm text-center p-6">
+                <Card key={index} className="bg-card/50 backdrop-blur-sm text-center p-6 border-border">
                   <CardContent className="p-0">
-                    <div className="text-3xl font-bold mb-2">{stat.number}</div>
+                    <div className="text-3xl font-bold mb-2 text-foreground">{stat.number}</div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </CardContent>
                 </Card>
@@ -52,10 +52,10 @@ export const TestimonialsSection = () => {
             </div>
 
             <div className="flex gap-4 pt-4">
-              <Button size="lg" variant="outline" className="rounded-full px-8">
+              <Button size="lg" variant="outline" className="rounded-full px-8 border-border text-foreground hover:bg-muted">
                 See All Projects
               </Button>
-              <Button size="lg" className="bg-muted-foreground text-background hover:bg-muted-foreground/90 rounded-full px-8">
+              <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
                 Contact Now
               </Button>
             </div>
@@ -64,19 +64,19 @@ export const TestimonialsSection = () => {
           {/* Right side - Testimonials */}
           <div className="space-y-6">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-card/50 backdrop-blur-sm p-6">
+              <Card key={index} className="bg-card/50 backdrop-blur-sm p-6 border-border">
                 <CardContent className="p-0 space-y-4">
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
-                        className={`w-4 h-4 ${i < testimonial.rating ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} 
+                        className={`w-4 h-4 ${i < testimonial.rating ? 'fill-muted-foreground text-muted-foreground' : 'text-border'}`} 
                       />
                     ))}
                   </div>
                   <p className="text-muted-foreground leading-relaxed">"{testimonial.text}"</p>
                   <div>
-                    <p className="font-semibold">{testimonial.author}</p>
+                    <p className="font-semibold text-foreground">{testimonial.author}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                   </div>
                 </CardContent>

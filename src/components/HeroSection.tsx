@@ -8,7 +8,7 @@ export const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const roles = [
     "AI Engineer",
-    "Founder of Zarnex.ai", 
+    "Own firm - Zarnex.ai", 
     "ML Researcher",
     "Backend Developer",
     "LLM Specialist"
@@ -49,12 +49,20 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Testimonials at top */}
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-md">
+          <p className="text-sm text-muted-foreground mb-2 text-center">"Working with him was a great experience!"</p>
+          <p className="text-xs text-muted-foreground text-center">- Client feedback</p>
+        </div>
+      </div>
+
       {/* Geometric background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-green-500/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-muted-foreground/5 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-muted-foreground/10 rounded-full"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-muted/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-muted/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-border/5 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-border/10 rounded-full"></div>
       </div>
 
       {/* Floating AI Technologies */}
@@ -69,13 +77,8 @@ export const HeroSection = () => {
         <div className="floating-tech tech-8">Firebase</div>
       </div>
 
-      {/* Floating testimonial cards */}
-      <div className="absolute top-1/4 right-1/4 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform rotate-3 animate-pulse">
-        <p className="text-sm text-muted-foreground mb-2">"Working with him was a great experience!"</p>
-        <p className="text-xs text-muted-foreground">- Client feedback</p>
-      </div>
-
-      <div className="absolute bottom-1/3 right-1/6 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform -rotate-2 animate-pulse" style={{animationDelay: '1s'}}>
+      {/* Floating testimonial card on right */}
+      <div className="absolute top-1/3 right-8 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform rotate-2 animate-pulse">
         <p className="text-sm text-muted-foreground mb-2">"He provided extraordinary AI solutions"</p>
         <p className="text-xs text-muted-foreground">- Zarnex.ai client</p>
       </div>
@@ -84,7 +87,7 @@ export const HeroSection = () => {
         <div className="space-y-8">
           {/* Role indicator */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-foreground rounded-full animate-pulse"></div>
             <span>Available for work</span>
           </div>
 
@@ -108,10 +111,10 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-8">
-            <Button size="lg" onClick={scrollToProjects} className="bg-muted-foreground text-background hover:bg-muted-foreground/90 rounded-full px-8">
+            <Button size="lg" onClick={scrollToProjects} className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
               See All Projects
             </Button>
-            <Button variant="outline" size="lg" onClick={scrollToContact} className="rounded-full px-8">
+            <Button variant="outline" size="lg" onClick={scrollToContact} className="rounded-full px-8 border-foreground text-foreground hover:bg-foreground hover:text-background">
               Contact Now
             </Button>
           </div>
