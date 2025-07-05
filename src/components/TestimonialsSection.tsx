@@ -70,7 +70,8 @@ export const TestimonialsSection = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
-                        className={`w-4 h-4 ${i < testimonial.rating ? 'fill-muted-foreground text-muted-foreground' : 'text-border'}`} 
+                        className={`w-4 h-4 ${i < testimonial.rating ? 'text-[#FFD700]' : 'text-border'}`}
+                        fill={i < testimonial.rating ? '#FFD700' : 'none'}
                       />
                     ))}
                   </div>

@@ -27,11 +27,10 @@ export const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/7f0162b0-904c-4ef9-b601-6e8bad918dde.png" 
+              src="/lovable-uploads/6d1eec40-9ea8-43ce-9aab-8c45748e5c14.png" 
               alt="MA Logo" 
-              className="w-10 h-10 neural-pulse"
+              className="w-8 h-8"
             />
-            <span className="font-bold text-xl">Mohammed Aashiq</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
