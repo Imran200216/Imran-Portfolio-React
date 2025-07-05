@@ -78,16 +78,92 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    cursor: none;
   }
 
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* Custom Cursor */
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid hsl(var(--primary));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-follower-dot {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: all 0.05s ease;
+}
+
+/* Floating Technologies */
+.floating-tech {
+  position: absolute;
+  background: hsl(var(--primary) / 0.1);
+  border: 1px solid hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary));
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  animation: float-across 15s linear infinite;
+}
+
+.floating-tech-bg {
+  position: absolute;
+  background: hsl(var(--muted-foreground) / 0.05);
+  border: 1px solid hsl(var(--muted-foreground) / 0.1);
+  color: hsl(var(--muted-foreground) / 0.4);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 10px;
+  font-weight: 400;
+  animation: float-across 20s linear infinite;
+}
+
+.tech-1 { top: 10%; animation-delay: 0s; }
+.tech-2 { top: 25%; animation-delay: -2s; }
+.tech-3 { top: 40%; animation-delay: -4s; }
+.tech-4 { top: 55%; animation-delay: -6s; }
+.tech-5 { top: 70%; animation-delay: -8s; }
+.tech-6 { top: 85%; animation-delay: -10s; }
+.tech-7 { top: 15%; animation-delay: -12s; }
+.tech-8 { top: 45%; animation-delay: -14s; }
+
+.tech-bg-1 { top: 15%; animation-delay: -1s; }
+.tech-bg-2 { top: 35%; animation-delay: -3s; }
+.tech-bg-3 { top: 55%; animation-delay: -5s; }
+.tech-bg-4 { top: 75%; animation-delay: -7s; }
+.tech-bg-5 { top: 25%; animation-delay: -9s; }
+.tech-bg-6 { top: 65%; animation-delay: -11s; }
+
+@keyframes float-across {
+  0% { transform: translateX(-100px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(calc(100vw + 100px)); opacity: 0; }
 }
 
 /* Custom AI Animations */

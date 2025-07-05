@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const ProjectsSection = () => {
   const projects = [
@@ -29,10 +30,31 @@ export const ProjectsSection = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <section id="projects" className="py-32 bg-muted/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
             <div className="w-2 h-2 bg-primary rounded-full"></div>
             <span>Recent Project</span>
@@ -43,77 +65,94 @@ export const ProjectsSection = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Showcase of some of my recent AI-powered applications
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <motion.div 
+          className="grid lg:grid-cols-3 gap-8 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className={`group hover:scale-105 transition-all duration-300 ${
-                index === 0 ? 'lg:col-span-2 lg:row-span-2' : ''
-              }`}
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              transition={{ duration: 0.6 }}
             >
-              <div className={`aspect-video bg-gradient-to-br from-muted to-muted/50 rounded-t-lg relative overflow-hidden ${
-                index === 0 ? 'aspect-[16/10]' : 'aspect-video'
-              }`}>
-                {/* Project preview mockup */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {project.image === 'laptop' && (
-                    <div className="w-3/4 h-3/4 bg-card rounded-lg border border-border shadow-lg flex items-center justify-center">
-                      <div className="w-4/5 h-4/5 bg-primary/10 rounded flex items-center justify-center">
-                        <span className="text-xs text-muted-foreground">AI Dashboard</span>
+              <Card 
+                className={`group hover:scale-105 transition-all duration-300 ${
+                  index === 0 ? 'lg:col-span-2 lg:row-span-2' : ''
+                }`}
+              >
+                <div className={`aspect-video bg-gradient-to-br from-muted to-muted/50 rounded-t-lg relative overflow-hidden ${
+                  index === 0 ? 'aspect-[16/10]' : 'aspect-video'
+                }`}>
+                  {/* Project preview mockup */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {project.image === 'laptop' && (
+                      <div className="w-3/4 h-3/4 bg-card rounded-lg border border-border shadow-lg flex items-center justify-center">
+                        <div className="w-4/5 h-4/5 bg-primary/10 rounded flex items-center justify-center">
+                          <span className="text-xs text-muted-foreground">AI Dashboard</span>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  {project.image === 'mobile' && (
-                    <div className="w-32 h-56 bg-card rounded-2xl border border-border shadow-lg relative">
-                      <div className="absolute top-2 left-2 right-2 bottom-2 bg-green-500/10 rounded-xl flex items-center justify-center">
-                        <span className="text-xs text-muted-foreground">Health AI</span>
+                    )}
+                    {project.image === 'mobile' && (
+                      <div className="w-32 h-56 bg-card rounded-2xl border border-border shadow-lg relative">
+                        <div className="absolute top-2 left-2 right-2 bottom-2 bg-green-500/10 rounded-xl flex items-center justify-center">
+                          <span className="text-xs text-muted-foreground">Health AI</span>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  {project.image === 'dashboard' && (
-                    <div className="w-4/5 h-4/5 bg-card rounded border border-border shadow-lg flex items-center justify-center">
-                      <div className="w-full h-full bg-yellow-500/10 rounded flex items-center justify-center">
-                        <span className="text-xs text-muted-foreground">ML Analytics</span>
+                    )}
+                    {project.image === 'dashboard' && (
+                      <div className="w-4/5 h-4/5 bg-card rounded border border-border shadow-lg flex items-center justify-center">
+                        <div className="w-full h-full bg-yellow-500/10 rounded flex items-center justify-center">
+                          <span className="text-xs text-muted-foreground">ML Analytics</span>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
-              
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
-                  <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
-                </div>
-                {project.award && (
-                  <Badge className="w-fit bg-yellow-500/10 text-yellow-600 border-yellow-500/20">
-                    {project.award}
-                  </Badge>
-                )}
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
                 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span 
-                      key={tech} 
-                      className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                    <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  {project.award && (
+                    <Badge className="w-fit bg-yellow-500/10 text-yellow-600 border-yellow-500/20">
+                      {project.award}
+                    </Badge>
+                  )}
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span 
+                        key={tech} 
+                        className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="outline" className="rounded-full px-8">
               See All Projects
@@ -122,7 +161,7 @@ export const ProjectsSection = () => {
               Contact Now
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

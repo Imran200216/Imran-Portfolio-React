@@ -1,6 +1,5 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 
 export const SkillsSection = () => {
   const skillCategories = [
@@ -8,30 +7,30 @@ export const SkillsSection = () => {
       title: "AI & Machine Learning",
       color: "primary",
       skills: [
-        { name: "Machine Learning", level: 90 },
-        { name: "Deep Learning", level: 85 },
-        { name: "Natural Language Processing", level: 88 },
-        { name: "LLMs & LangChain", level: 92 }
+        "Machine Learning",
+        "Deep Learning", 
+        "Natural Language Processing",
+        "LLMs & LangChain"
       ]
     },
     {
       title: "Backend Development", 
       color: "green-500",
       skills: [
-        { name: "Python/Flask", level: 90 },
-        { name: "Node.js/Express", level: 85 },
-        { name: "API Development", level: 88 },
-        { name: "Database Design", level: 82 }
+        "Python/Flask",
+        "Node.js/Express",
+        "API Development", 
+        "Database Design"
       ]
     },
     {
       title: "Cloud & Tools",
       color: "yellow-500", 
       skills: [
-        { name: "Google Cloud/Vertex AI", level: 85 },
-        { name: "Firebase", level: 80 },
-        { name: "Docker & DevOps", level: 75 },
-        { name: "Git & Version Control", level: 90 }
+        "Google Cloud/Vertex AI",
+        "Firebase",
+        "Docker & DevOps",
+        "Git & Version Control"
       ]
     }
   ];
@@ -43,8 +42,18 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-muted/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 bg-muted/5 relative overflow-hidden">
+      {/* Floating AI Technologies Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="floating-tech-bg tech-bg-1">PyTorch</div>
+        <div className="floating-tech-bg tech-bg-2">OpenAI</div>
+        <div className="floating-tech-bg tech-bg-3">Hugging Face</div>
+        <div className="floating-tech-bg tech-bg-4">Transformers</div>
+        <div className="floating-tech-bg tech-bg-5">BERT</div>
+        <div className="floating-tech-bg tech-bg-6">GPT</div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="fade-in-up">
           <h2 className="text-4xl font-bold text-center mb-12">Skills & Tools</h2>
           
@@ -56,12 +65,9 @@ export const SkillsSection = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span>{skill.name}</span>
-                        <span className="text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <Progress value={skill.level} className="h-2" />
+                    <div key={skillIndex} className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="text-sm font-medium">{skill}</span>
                     </div>
                   ))}
                 </CardContent>

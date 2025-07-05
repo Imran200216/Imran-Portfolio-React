@@ -57,6 +57,18 @@ export const HeroSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-muted-foreground/10 rounded-full"></div>
       </div>
 
+      {/* Floating AI Technologies */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="floating-tech tech-1">Ollama</div>
+        <div className="floating-tech tech-2">TensorFlow</div>
+        <div className="floating-tech tech-3">LangChain</div>
+        <div className="floating-tech tech-4">PyTorch</div>
+        <div className="floating-tech tech-5">Vertex AI</div>
+        <div className="floating-tech tech-6">LangGraph</div>
+        <div className="floating-tech tech-7">Crew.ai</div>
+        <div className="floating-tech tech-8">Firebase</div>
+      </div>
+
       {/* Floating testimonial cards */}
       <div className="absolute top-1/4 right-1/4 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform rotate-3 animate-pulse">
         <p className="text-sm text-muted-foreground mb-2">"Working with him was a great experience!"</p>
@@ -78,7 +90,7 @@ export const HeroSection = () => {
 
           <div className="space-y-6">
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight">
-              Mohammed <span className="text-muted-foreground">A</span>  
+              Mohammed <span className="text-muted-foreground">Aashiq</span>  
               <ArrowRight className="inline-block w-12 h-12 ml-4 transform -rotate-45" />
             </h1>
             

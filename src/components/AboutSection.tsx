@@ -6,15 +6,17 @@ export const AboutSection = () => {
     <section id="about" className="py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Image placeholder */}
+          {/* Left side - Your Photo */}
           <div className="relative">
             <div className="aspect-[4/5] bg-gradient-to-br from-primary/20 to-green-500/20 rounded-2xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-card/50 backdrop-blur-sm flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-3xl font-bold">MA</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mt-8">
+              <img 
+                src="/lovable-uploads/6d1eec40-9ea8-43ce-9aab-8c45748e5c14.png"
+                alt="Mohammed Aashiq"
+                className="w-full h-full object-cover rounded-2xl"
+              />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-card/80 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex items-center justify-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-sm text-muted-foreground">Available for work</span>
                   </div>
@@ -26,7 +28,7 @@ export const AboutSection = () => {
           {/* Right side - Content */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-5xl font-bold mb-6">Hello, I am Mohammed</h2>
+              <h2 className="text-5xl font-bold mb-6">Hello, I am Mohammed Aashiq</h2>
               <p className="text-xl text-muted-foreground mb-6">AI/ML Engineer</p>
             </div>
 
