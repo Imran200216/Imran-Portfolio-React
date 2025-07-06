@@ -432,8 +432,8 @@ export const ProjectsSection = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <img
-                    src="/logos/unstop.png"
-                    alt="Unstop Project"
+                    src="/logos/image.png"
+                    alt="Dr. MGR - Janaki College of Arts and Science for Woment"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-300"></div>
@@ -445,7 +445,7 @@ export const ProjectsSection = () => {
                         whileHover={{ x: 5 }}
                         transition={{ type: "spring" as const, stiffness: 300 }}
                       >
-                        <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors">Timetable Generator</CardTitle>
+                        <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors">Timetable Management System</CardTitle>
                       </motion.div>
                       <motion.div
                         whileHover={{ 
@@ -463,7 +463,7 @@ export const ProjectsSection = () => {
                       whileHover="hover"
                     >
                       <Badge className="w-fit bg-green-500/10 text-green-600 border-green-500/20 cursor-pointer text-xs sm:text-sm">
-                        Unstop Project
+                      Dr. MGR - Janaki College of Arts and Science for Women
                       </Badge>
                     </motion.div>
                   </CardHeader>
