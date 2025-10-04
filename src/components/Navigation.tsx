@@ -31,7 +31,7 @@ export const Navigation = () => {
     { label: "Experience", id: "experience", color: "#4285F4" },
     { label: "Projects", id: "projects", color: "#EA4335" },
     { label: "Skills", id: "skills", color: "#34A853" },
-    { label: "Testimonials", id: "testimonials", color: "#FF69B4" },
+    // { label: "Testimonials", id: "testimonials", color: "#FF69B4" },
     { label: "Contact", id: "contact", color: "#87CEEB" },
   ];
 
