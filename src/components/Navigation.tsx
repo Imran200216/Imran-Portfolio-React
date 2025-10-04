@@ -48,7 +48,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between space-x-4 sm:space-x-8 lg:space-x-16">
           {/* Profile Photo */}
           <img
-            src="/lovable-uploads/md.png"
+            src="/logos/mr-dev.png"
             alt="Profile Photo"
             className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition-all duration-300"
           />
@@ -60,7 +60,7 @@ export const Navigation = () => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="hover:text-[#FBBC05] transition-all duration-300 whitespace-nowrap"
-                style={{ '--hover-color': item.color } as React.CSSProperties}
+                style={{ "--hover-color": item.color } as React.CSSProperties}
               >
                 {item.label}
               </button>
@@ -68,7 +68,7 @@ export const Navigation = () => {
           </div>
 
           {/* Desktop Connect Button */}
-          <Button
+          {/* <Button
             variant="ghost"
             size="sm"
             className="hidden sm:flex rounded-full text-white border border-white/20 hover:bg-white/10 transition px-3 sm:px-5 py-2 text-xs sm:text-sm"
@@ -92,13 +92,13 @@ export const Navigation = () => {
               <span className="hidden lg:inline">Connect with me</span>
               <span className="lg:hidden">Connect</span>
             </a>
-          </Button>
+          </Button> */}
 
           {/* Social Media Icons */}
           <div className="hidden sm:flex items-center space-x-2 lg:space-x-4">
             <Button variant="ghost" size="sm" asChild>
               <a
-                href="https://github.com/aashiqmustak"
+                href="https://github.com/Imran200216"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -107,29 +107,11 @@ export const Navigation = () => {
             </Button>
             <Button variant="ghost" size="sm" asChild>
               <a
-                href="https://linkedin.com/in/mdaashiq"
+                href="https://www.linkedin.com/in/imran-b-9b150b28b/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://leetcode.com/u/aashiqmustak"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LeetcodeIcon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://huggingface.co/aashiqmustak"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <HuggingFaceIcon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
               </a>
             </Button>
           </div>
@@ -153,7 +135,7 @@ export const Navigation = () => {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          <div 
+          <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
@@ -173,7 +155,7 @@ export const Navigation = () => {
             </div>
 
             {/* Mobile Connect Button */}
-            <Button
+            {/* <Button
               variant="outline"
               size="lg"
               className="w-full mb-4 rounded-full border-foreground text-foreground hover:bg-foreground hover:text-background"
@@ -196,13 +178,13 @@ export const Navigation = () => {
                 </svg>
                 <span>Connect with me</span>
               </a>
-            </Button>
+            </Button> */}
 
             {/* Mobile Social Media Icons */}
             <div className="flex items-center justify-center space-x-4">
               <Button variant="ghost" size="sm" asChild>
                 <a
-                  href="https://github.com/aashiqmustak"
+                  href="https://github.com/Imran200216"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -211,14 +193,14 @@ export const Navigation = () => {
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <a
-                  href="https://linkedin.com/in/mdaashiq"
+                  href="https://www.linkedin.com/in/imran-b-9b150b28b/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Linkedin className="w-6 h-6 text-white" />
                 </a>
               </Button>
-              <Button variant="ghost" size="sm" asChild>
+              {/* <Button variant="ghost" size="sm" asChild>
                 <a
                   href="https://leetcode.com/u/aashiqmustak"
                   target="_blank"
@@ -235,7 +217,7 @@ export const Navigation = () => {
                 >
                   <HuggingFaceIcon className="w-6 h-6 text-white" />
                 </a>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

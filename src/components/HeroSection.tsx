@@ -7,12 +7,13 @@ export const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const roles = [
-    { text: "End to End AI Engineer", color: "#FBBC05" }, // Yellow
-    { text: "Own firm - Freelance", color: "#4285F4" }, // Blue
-    { text: "ML Researcher", color: "#EA4335" }, // Red
-    { text: "Backend Developer", color: "#34A853" }, // Green
-    { text: "LLM Specialist", color: "#FF69B4" }, // Pink
-    { text: "Neural Networks in hands !", color: "#87CEEB" } // Sky Blue
+    { text: "Flutter Developer", color: "#4285F4" }, // Blue
+    { text: "Mobile App Engineer", color: "#34A853" }, // Green
+    { text: "Cross-Platform Expert", color: "#FBBC05" }, // Yellow
+    { text: "Own Firm - Freelance", color: "#FF69B4" }, // Pink
+    { text: "Full Stack Flutter Developer", color: "#EA4335" }, // Red
+    { text: "Firebase + Flutter Specialist", color: "#87CEEB" }, // Sky Blue
+    { text: "UI/UX with Flutter", color: "#8A2BE2" }, // Purple
   ];
 
   useEffect(() => {
@@ -77,17 +78,22 @@ export const HeroSection = () => {
       </div>
 
       {/* Floating Testimonials - Hidden on mobile, visible on larger screens */}
-      <div className="hidden lg:block absolute top-13 right-5 z-10 transform -translate-x-1/2">
+      {/* <div className="hidden lg:block absolute top-13 right-5 z-10 transform -translate-x-1/2">
         <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-md">
           <p className="text-sm text-muted-foreground mb-2 text-center">
-            "His Statistical Knowledge of approach<br /> Whaaaoooooo!"
+            "His Statistical Knowledge of approach
+            <br /> Whaaaoooooo!"
           </p>
-          <p className="text-xs text-muted-foreground text-center">- Team mates</p>
+          <p className="text-xs text-muted-foreground text-center">
+            - Team mates
+          </p>
         </div>
       </div>
 
       <div className="hidden lg:block absolute bottom-1/4 left-5 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform rotate-2 animate-pulse">
-        <p className="text-sm text-muted-foreground mb-2">"His Leadership qualities are insane"</p>
+        <p className="text-sm text-muted-foreground mb-2">
+          "His Leadership qualities are insane"
+        </p>
         <p className="text-xs text-muted-foreground">- UNSTOP Feedback</p>
       </div>
 
@@ -95,13 +101,17 @@ export const HeroSection = () => {
         <p className="text-sm text-muted-foreground mb-2">
           "Why is he fond of Artificial Intelligence and Google Technologies"
         </p>
-        <p className="text-xs text-muted-foreground">- My own mind voice! Lol</p>
+        <p className="text-xs text-muted-foreground">
+          - My own mind voice! Lol
+        </p>
       </div>
 
       <div className="hidden lg:block absolute top-1/3 right-1 bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 max-w-xs transform rotate-2 animate-pulse">
-        <p className="text-sm text-muted-foreground mb-2">"He provided extraordinary AI solutions"</p>
+        <p className="text-sm text-muted-foreground mb-2">
+          "He provided extraordinary AI solutions"
+        </p>
         <p className="text-xs text-muted-foreground">- Zarnex.ai client</p>
-      </div>
+      </div> */}
 
       {/* Main Hero Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left z-10 space-y-6 sm:space-y-8">
@@ -113,7 +123,7 @@ export const HeroSection = () => {
 
         <div className="space-y-4 sm:space-y-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight">
-            Mohammed <span className="text-muted-foreground">Aashiq</span>
+            Imran <span className="text-muted-foreground">B</span>
             <ArrowRight
               className="inline-block w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 ml-2 sm:ml-4 transform -rotate-45 cursor-pointer hover:scale-110 transition-transform"
               onClick={scrollToAbout}
@@ -121,7 +131,7 @@ export const HeroSection = () => {
           </h1>
 
           <div className="h-16 sm:h-20 flex items-center justify-center sm:justify-start">
-            <p 
+            <p
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-center sm:text-left"
               style={{ color: roles[currentIndex].color }}
             >
@@ -131,8 +141,9 @@ export const HeroSection = () => {
           </div>
 
           <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto sm:mx-0 text-muted-foreground leading-relaxed">
-            I'm a versatile AI engineer specializing in intelligent systems to help grow your business.
-            Let's build something great!
+            I’m a versatile Flutter developer specializing in building
+            cross-platform mobile apps that deliver seamless performance and
+            beautiful design. Let’s create something amazing together!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 sm:pt-8 justify-center sm:justify-start">
